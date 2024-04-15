@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import "bootstrap/dist/css/bootstrap.min.css"
 
 function Home() {
   const [players, setPlayers] = useState([]);
@@ -90,13 +91,14 @@ function Home() {
             <ul>
               {players.map(player => (
                 <li key={player.id}>
+                  <input value={player.id} type="hidden" name="friendId" id="friendId"/>
                   <img src={player.imageUrl} alt={player.userName} /> 
-                  {player.userName}
+                  <div>{player.userName}</div>
                   <div>
-    <button className="addfriendbtn" onClick={() => setFriendId(player.userName)}>Add Friend</button>
-    <span style={{ margin: '0 10px' }}></span> 
-    <button  className="friendbtn"onClick={() => handleRemoveFriend(player.userName)}>Unfriend</button>
-</div>
+                      <button className="addfriendbtn" onClick={() => setFriendId(player.userName)}>Add Friend</button>
+                      <span style={{ margin: '0 10px' }}></span> 
+                      <button  className="friendbtn"onClick={() => handleRemoveFriend(player.userName)}>Unfriend</button>
+                  </div>
 
                 </li>
               ))}

@@ -7,6 +7,7 @@ import AddFriend from "./components/AddFriend";
 import PlayerProfile from "./components/PlayerProfile";
 import PlayerDetails from "./components/PlayerDetails";
 import PlayerEdit from "./components/PlayerEdit";
+import "bootstrap/dist/css/bootstrap.min.css"
 function App(){
   return(
     <div>
